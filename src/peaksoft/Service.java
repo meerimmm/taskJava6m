@@ -1,7 +1,7 @@
 package peaksoft;
 
 public interface Service {
-    void updateStudent(Long id, String name, String lastName);
+    boolean updateStudent(Long id, String name, String lastName);
 
     Student getStudentById(Long id);
 

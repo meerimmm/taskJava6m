@@ -1,5 +1,5 @@
 package peaksoft;
-
+import java.util.Arrays;
 public class Main {
     /**
      * Задача ServiceImpl'дын ичиндеги методтоду ишке ашыруу керек
@@ -21,7 +21,16 @@ public class Main {
      * *
      */
     public static void main(String[] args) {
+        Student student=new Student(1L,"Meerim","Ismanalieva",30_09_06);
 
+         Student[] students=new Student[]{student};
+        ServiceImpl service=new ServiceImpl(students);
+
+       System.out.println(service.updateStudent(student.getId(), student.getName(), student.getLastName()));
+        System.out.println(service.getStudentById(student.getId()));
+        System.out.println(service.getName(student.getName()));
+        System.out.println(service.getCountAge(student.getAge()));
+       System.out.println(Arrays.toString(service.getAllStudents()));
 
     }
 
